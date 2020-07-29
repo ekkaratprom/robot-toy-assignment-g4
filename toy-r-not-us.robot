@@ -78,7 +78,7 @@ Status : In Stock / Out of stock
     ตรวจสอบ Shipping type
     ตรวจสอบ Location
 สั่งซื้อของเล่น
-    [Arguments]    ${TOY_NAME}
+    [Arguments]    ${TOY_NAME}    ${NUMBER}
     ค้นหาของเล่น    ${TOY_NAME}
     เลือกจำนวน    ${NUMBER}    
     ตรวจสอบรายละเอียดของเล่น
