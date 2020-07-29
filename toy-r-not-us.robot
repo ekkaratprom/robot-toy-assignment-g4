@@ -6,8 +6,10 @@ Library    SeleniumLibrary
 เลือกเพศ
 พิมพ์หาของเล่น - City Gargage Truck Lego
 กดค้นหา
+    [Arguments]    ${TOY_NAME}
 กดของเล่น
-เลือกจำนวน - 1
+เลือกจำนวน
+    [Arguments]    ${NUMBER}
 ตรวจสอบ Toy Image : City Gargage Truck Lego
 ตรวจสอบ Toy name : City Gargage Truck Lego
 ตรวจสอบ Brand : Lego
@@ -40,12 +42,12 @@ Status : In Stock / Out of stock
 ตรวจสอบ Location
 ปิด Browser
 ค้นหาของเล่น
+    [Arguments]    ${TOY_NAME}
     เลือกอายุ
     เลือกเพศ
     พิมพ์หาของเล่น - City Gargage Truck Lego
-    กดค้นหา
+    กดค้นหา    ${TOY_NAME}
     กดของเล่น
-    เลือกจำนวน - 1
 ตรวจสอบรายละเอียดของเล่น
     ตรวจสอบ Toy Image : City Gargage Truck Lego
     ตรวจสอบ Toy name : City Gargage Truck Lego
@@ -76,7 +78,9 @@ Status : In Stock / Out of stock
     ตรวจสอบ Shipping type
     ตรวจสอบ Location
 สั่งซื้อของเล่น
-    ค้นหาของเล่น
+    [Arguments]    ${TOY_NAME}
+    ค้นหาของเล่น    ${TOY_NAME}
+    เลือกจำนวน    ${NUMBER}    
     ตรวจสอบรายละเอียดของเล่น
     กด Add to cart
     ตรวจสอบตะกร้า
