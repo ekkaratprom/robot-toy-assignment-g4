@@ -34,7 +34,8 @@ Status : In Stock / Out of stock
 พิมพ์ชื่อ Province
 พิมพ์รหัสไปรษณีย์
 กดปุ่มยืนยัน
-เลือก GSB
+เลือกประเภทการชำระเงิน
+    [Arguments]    ${PAYMENT}
 กดชำระเงิน
 ตรวจสอบ Slip ID YYYYMMDDSEQ
 ตรวจสอบTotal Price
@@ -45,8 +46,8 @@ Status : In Stock / Out of stock
     [Arguments]    ${TOY_NAME}
     เลือกอายุ
     เลือกเพศ
-    พิมพ์หาของเล่น - City Gargage Truck Lego
-    กดค้นหา    ${TOY_NAME}
+    พิมพ์หาของเล่น    ${TOY_NAME}
+    กดค้นหา
     กดของเล่น
 ตรวจสอบรายละเอียดของเล่น
     ตรวจสอบ Toy Image : City Gargage Truck Lego
@@ -78,7 +79,7 @@ Status : In Stock / Out of stock
     ตรวจสอบ Shipping type
     ตรวจสอบ Location
 สั่งซื้อของเล่น
-    [Arguments]    ${TOY_NAME}    ${NUMBER}
+    [Arguments]    ${TOY_NAME}    ${NUMBER}    ${PAYMENT}
     ค้นหาของเล่น    ${TOY_NAME}
     เลือกจำนวน    ${NUMBER}    
     ตรวจสอบรายละเอียดของเล่น
@@ -87,9 +88,9 @@ Status : In Stock / Out of stock
     กด Process to checkout
     กรอกรายละเอียดการจัดส่ง
     กดปุ่มยืนยัน
-    เลือก GSB
+    เลือกประเภทการชำระเงิน    ${PAYMENT}
     กดชำระเงิน
     ตรวจสอบสรุปการซื้อของเล่น
 *** Test Cases ***
 สั่งซื้อ City Gargage Truck Lego 1 ea ด้วย GSB Debit
-    สั่งซื้อของเล่น
+    สั่งซื้อของเล่น    City Gargage Truck Lego    1    GSB
